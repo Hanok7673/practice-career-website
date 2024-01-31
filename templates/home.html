@@ -1,58 +1,38 @@
 <!DOCTYP html>
-<html>
+<html lang= "en-US">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       Career Website | Official
     </title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-      h1{
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(180,100,130);
-        text-align: center;
-      }
       #banner{
-        width: 100%;
         height: 360px;
+        width: 100%;
         object-fit: cover;
-      }
-
-      h2{
-        font-family: Roberto;
-        font-size: 32px;
-        color: rgb(100,100,100);
-        font-weight: lighter;
-        text-align: center;
-        
-      }
-
-      p{
-        font-family: Roberto;
-        font-color: rgb(80,80,80);
-      }
-      #container{
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      .bodytext{
-        font-family: Roborto;
-        font-color: rgb(80,80,80)
       }
     </style>
   </head>
   <body>
-      <div id="container">
-     <h1 > Paisa Kamau Website </h1>
-      <img id = "banner" src= "https://d1671ce5-7659-4d45-8a75-07f01cc870d6-00-dpsntxzk5is3.pike.replit.dev/static/banner.jpg">
-      <h2> About Openings </h2>
-      <p> 
+      <div class="container">
+     <h1 class="text-center mt-2 mb-4"> {{company_name}} Website </h1>
+      <img id = "banner" class="img-fluid" src= "https://d1671ce5-7659-4d45-8a75-07f01cc870d6-00-dpsntxzk5is3.pike.replit.dev/static/banner.jpg">
+      <h2 class="text-center mt-4 mb-4"> About Openings </h2>
+      <p class="lead"> 
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
       </p>
-      <h2> Open Positions </h2>
-      <p> TODO- Showing the Jobs here</p>
+      <h2 class="text-center"> Open Positions </h2>
+      <div  >
+        {% for job in jobs %}
+        {% include 'jobitems.html' %}
+        {% endfor %}
+      </div>
+        
+        
      <div style= "text-align:center;">
-        <button> Contact Us </button>
+        <button class="btn btn-primary btn-lg mt-5 mb-3"> Contact Us </button>
        <p class="bodytext" > Copyright 2024</p>
      </div>
       </div>
